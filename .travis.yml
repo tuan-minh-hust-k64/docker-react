@@ -6,6 +6,7 @@ before_install: #xây dựng 1 image thông qua file Dockerfile.dev
   - docker build -t tuanminh/docker-react -f Dockerfile.dev .
 script: #nói với travis cách chạy các bài test
   - docker run -e CI=true tuanminh/docker-react npm run test
+  
 deploy:
   provider: elasticbeanstalk #tên nền tảng
   region: 'us-east-1' #tên vùng kho khởi tạo ứng dụng
@@ -15,5 +16,5 @@ deploy:
   bucket_path: 'Docker-react'
   on: #chỉ redeploy ở nhánh được chỉ định
     branch: main
-  access_key_id: $ACCESS_KEY_ID
-  secret_access_key: $SECRET_ACCESS_KEY
+  access_key_id: $AWS_ACCESS_KEY_ID
+  secret_access_key: $AWS_SECRET_ACCESS_KEY
