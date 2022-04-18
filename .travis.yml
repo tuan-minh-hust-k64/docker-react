@@ -12,7 +12,7 @@ deploy:
   region: 'us-east-1' #tên vùng kho khởi tạo ứng dụng
   app: 'Docker-react' #tên app
   env: 'Dockerreact-env'
-  bucket: 'elasticbeanstalk-us-east-1-225317789430', #S3 -> app
+  bucket: 'elasticbeanstalk-us-east-1-225317789430' #S3 -> app
   bucket_path: 'Docker-react'
   on: #chỉ redeploy ở nhánh được chỉ định
     branch: main
