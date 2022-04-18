@@ -1,0 +1,8 @@
+sudo: require # yêu cầu quyền cao nhất trong quá trình thực hiện
+services:  #nói với travis cần 1 bản copy của docker để chạy quá trình này
+  - docker
+
+before_install: #xây dựng 1 image thông qua file Dockerfile.dev
+  - docker build -t tuanminh/docker-react -f Dockerfile.dev .
+script: #nói với travis cách chạy các bài test
+  - docker run -e CI=true tuanminh/docker-react npm run test
