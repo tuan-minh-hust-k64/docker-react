@@ -8,11 +8,11 @@ script: #nói với travis cách chạy các bài test
   - docker run -e CI=true tuanminh/docker-react npm run test
 deploy:
   provider: elasticbeanstalk #tên nền tảng
-  region: "us-east-1" #tên vùng kho khởi tạo ứng dụng
-  app: "Docker-react" #tên app
-  env: "Dockerreact-env"
-  bucket_name: "elasticbeanstalk-us-east-1-225317789430", #S3 -> app
-  bucket_path: "Docker-react"
+  region: 'us-east-1' #tên vùng kho khởi tạo ứng dụng
+  app: 'Docker-react' #tên app
+  env: 'Dockerreact-env'
+  bucket_name: 'elasticbeanstalk-us-east-1-225317789430', #S3 -> app
+  bucket_path: 'Docker-react'
   on: #chỉ redeploy ở nhánh được chỉ định
     branch: main
   access_key_id: $ACCESS_KEY_ID
